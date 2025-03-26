@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đóng Góp Ý Kiến Thư Viện</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container" id="form-page">
+        <h1>Đóng Góp Ý Kiến Cho Thư Viện</h1>
+        
+        <h2>Thông Tin Người Góp Ý</h2>
+        <div class="form-group">
+            <label>Họ và tên:</label>
+            <input type="text" id="name">
+        </div>
+        <div class="form-group">
+            <label>Lớp:</label>
+            <input type="text" id="class">
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="email">
+        </div>
+        
+        <h2>Đóng Góp Ý Kiến</h2>
+        <div class="form-group">
+            <label>Cơ sở vật chất:</label>
+            <textarea id="facility"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Dịch vụ thư viện:</label>
+            <textarea id="service"></textarea>
+        </div>
+        
+        <h2>Thể Loại Sách Cần Bổ Sung</h2>
+        <div class="form-group">
+            <label>Chọn thể loại:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="science"> Khoa học<br>
+                <input type="checkbox" id="literature"> Văn học<br>
+                <input type="checkbox" id="history"> Lịch sử<br>
+                <input type="checkbox" id="skill"> Kỹ năng sống
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tên sách cụ thể:</label>
+            <input type="text" id="specific-book">
+        </div>
+        
+        <button onclick="submitForm()">Gửi Ý Kiến</button>
+    </div>
+
+    <div class="container" id="response-page">
+        <h2>Cảm ơn bạn đã đóng góp!</h2>
+        <p>Chúng tôi ghi nhận ý kiến của bạn.<br>
+        Ý kiến sẽ được xem xét để cải thiện thư viện.</p>
+    </div>
+
+    <script>
+        function submitForm() {
+            if (!document.getElementById("name").value) {
+                alert("Điền họ tên!");
+                return;
+            }
+            document.getElementById("form-page").style.display = "none";
+            document.getElementById("response-page").style.display = "block";
+        }
+    </script>
+</body>
+</html>
